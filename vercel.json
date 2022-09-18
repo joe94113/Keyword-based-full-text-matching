@@ -1,5 +1,16 @@
 {
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/router" }
-    ]
+    "version": 2,
+    "builds": [
+        {
+            "src": "./router.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ],
+    "installCommand": "pip install"
 }
