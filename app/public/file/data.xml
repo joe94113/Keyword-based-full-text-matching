@@ -21,4 +21,18 @@
     <year>2003</year>
     <price>39.95</price>
   </book>
+  <book category="Action and adventure">
+    <title lang="en">Jurassic Park</title>
+    <description>Jurassic Park (1993) is one of Steven Spielberg’s most beloved films. Over twenty-five years on from its original release, it has accrued four sequels, a legion of worldwide fans, and a wide range of merchandise covering everything from action figures and board games to comic books and video games. As such, the film is widely acknowledged as one of the most significant blockbusters of the 1990s, a position underlined by its pioneering use of CGI to resurrect the dinosaurs with more realism than ever before. However, there’s much more to Jurassic Park than a simple special effects extravaganza. Spielberg’s career was in flux at the time of the film’s release, and this contribution to the Constellations series explores this shift by analyzing the film in a number of ways. First, it considers how Spielberg blends science fiction and horror, and how the mix of those two genres affects the film and its message. Then it looks at what the film has to say about humanity’s relationship with nature, its commentary on the bond between an audience and the fantasy of cinema, and, finally, its thoughts on the manifestation of violence and control in men. It does this through close analysis of key characters, story points, and scenes, and the film’s place within the context of Spielberg’s career as a whole.</description>
+    <author>Bullock, Paul</author>
+    <year>2003</year>
+    <price>21</price>
+  </book>
+  <book category="Science Fiction">
+    <title lang="en">Frankenstein (Collins Classics)</title>
+    <description>Jurassic Park (1993) is one of Steven Spielberg’s most beloved films. Over twenty-five years on from its original release, it has accrued four sequels, a legion of worldwide fans, and a wide range of merchandise covering everything from action figures and board games to comic books and video games. As such, the film is widely acknowledged as one of the most significant blockbusters of the 1990s, a position underlined by its pioneering use of CGI to resurrect the dinosaurs with more realism than ever before. However, there’s much more to Jurassic Park than a simple special effects extravaganza. Spielberg’s career was in flux at the time of the film’s release, and this contribution to the Constellations series explores this shift by analyzing the film in a number of ways. First, it considers how Spielberg blends science fiction and horror, and how the mix of those two genres affects the film and its message. Then it looks at what the film has to say about humanity’s relationship with nature, its commentary on the bond between an audience and the fantasy of cinema, and, finally, its thoughts on the manifestation of violence and control in men. It does this through close analysis of key characters, story points, and scenes, and the film’s place within the context of Spielberg’s career as a whole.</description>
+    <author>Mary Shelley</author>
+    <year>1818</year>
+    <price>20</price>
+  </book>
 </bookstore>

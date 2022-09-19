@@ -24,7 +24,7 @@
             {% for data in jsonData %}
             <tr>
                 <td>{{ data['created_at'] }}</td>
-                <td><span style="white-space:nowrap;">{{ data['text']|safe }}</span></td>
+                <td><span>{{ data['text']|safe }}</span></td>
             </tr>
             {% endfor %}
         </tbody>
