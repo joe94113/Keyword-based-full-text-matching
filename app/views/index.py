@@ -1,7 +1,6 @@
 from flask import render_template
 from flask import request
 import pandas as pd
-import xml.etree.ElementTree as ET
 import json
 import re
 from app.methods.porterStemmer import PorterStemmer
