@@ -74,7 +74,7 @@ class Views:
                 for sentence in sentences:
                     originalText = [x.replace(' ', '') for x in sentence.split(' ')]
                     text = [x.strip().replace(' ', '').rstrip('.') for x in sentence.split(' ')]
-                    print(sentence)
+                    # print(sentence)
                     checkInSentence = False
                     sentenceIndex = 0
                     for ids, w in enumerate(text):
