@@ -15,10 +15,12 @@ class Views:
         jsonLog = {
             'word': 0,
             'sentence': 0,
+            'char': 0
         }
         xmlLog = {
             'word': 0,
             'sentence': 0,
+            'char': 0
         }
         # print(xmlData)
         if(search):
@@ -43,6 +45,7 @@ class Views:
                             checkInJson = True
                             checkInSentence = True
                             jsonLog['word'] += 1
+                            jsonLog['char'] += len(w)
                             strs.append('<span style="color: red">' + originalText[ids] + '</span>')
                         else:
                             if ids == len(text) - 1 and originalText[ids].endswith('.') == False:
@@ -81,6 +84,7 @@ class Views:
                             checkInXml = True
                             checkInSentence = True
                             xmlLog['word'] += 1
+                            xmlLog['char'] += len(w)
                             strs.append('<span style="color: red">' + originalText[ids] + '</span>')
                         else:
                             if ids == len(text) - 1 and originalText[ids].endswith('.') == False:

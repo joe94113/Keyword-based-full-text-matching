@@ -15,7 +15,7 @@
     <hr>
     <h3 class="text-center">Read json file (推特訊息格式)</h3>
     {% if search %}
-    總共查詢到 {{ jsonLog['word'] }} 個符合的資料，{{ jsonLog['sentence'] }}個句子 
+    總共查詢到 {{ jsonLog['word'] }} 個符合的資料，共{{ jsonLog['char'] }}個字數，{{ jsonLog['sentence'] }}個句子 
     {% endif %}
     <table class="table table-bordered">
         <thead>
@@ -37,7 +37,7 @@
     <hr>
     <h3 class="text-center">Read xml file (W3Schools)</h3>
     {% if search %}
-    總共查詢到 {{ xmlLog['word'] }} 個符合的資料，{{ xmlLog['sentence'] }}個句子 
+    總共查詢到 {{ xmlLog['word'] }} 個符合的資料，共{{ xmlLog['char'] }}個字數，{{ xmlLog['sentence'] }}個句子 
     {% endif %}
     <table class="table table-bordered">
         <thead>
