@@ -9,11 +9,15 @@
         <label for="floatingInputValue">Input with value</label>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    {% if search %}
+    <h4 class="text-center">搜尋: {{ search }}</h4>
+    {% endif %}
+    <hr>
     <h3 class="text-center">Read json file (推特訊息格式)</h3>
     {% if search %}
     總共查詢到 {{ jsonLog['word'] }} 個符合的資料，{{ jsonLog['sentence'] }}個句子 
     {% endif %}
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
             <th scope="col">創建時間</th>
@@ -29,16 +33,18 @@
             {% endfor %}
         </tbody>
     </table>
+    <br>
+    <hr>
     <h3 class="text-center">Read xml file (W3Schools)</h3>
     {% if search %}
     總共查詢到 {{ xmlLog['word'] }} 個符合的資料，{{ xmlLog['sentence'] }}個句子 
     {% endif %}
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
             <th scope="col">分類</th>
             <th scope="col">書名</th>
-            <th scope="col">description</th>
+            <th scope="col">描述</th>
             <th scope="col">作者</th>
             <th scope="col">年分</th>
             <th scope="col">價格</th>

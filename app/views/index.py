@@ -27,12 +27,12 @@ class Views:
             checkInXml = False
             # data = [x for x in data if search in x['text']]
             for d in jsonFile:
-                sentences = Views.textToSentence(d['text'])
+                sentences = Views.split_into_sentences(d['text'])
                 # Find and replace string values in list
                 strs = []
                 for sentence in sentences:
                     originalText = [x.replace(' ', '') for x in sentence.split(' ')]
-                    text = [x.strip().replace(' ', '').rstrip('.') for x in sentence.split(' ')]
+                    text = [x.strip().replace(' ', '').replace(',', '').rstrip('.') for x in sentence.split(' ')]
                     # print(text)
                     checkInSentence = False
                     sentenceIndex = 0
