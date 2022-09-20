@@ -5,11 +5,11 @@ import json
 import re
 from app.methods.porterStemmer import PorterStemmer
 
-class Views:
+class Search:
     def index():
         search = request.args.get('search')
-        jsonFile = Views.getJsonData()
-        xmlFile = Views.getXmlData()
+        jsonFile = Search.getJsonData()
+        xmlFile = Search.getXmlData()
         jsonData = [];
         xmlData = [];
         jsonLog = {
@@ -30,7 +30,7 @@ class Views:
             # data = [x for x in data if search in x['text']]
             try:
                 for d in jsonFile:
-                    sentences = Views.split_into_sentences(d['text'])
+                    sentences = Search.split_into_sentences(d['tweet_text'])
                     # Find and replace string values in list
                     strs = []
                     for sentence in sentences:
@@ -41,7 +41,7 @@ class Views:
                         sentenceIndex = 0
                         for ids, w in enumerate(text):
                             sentenceIndex += 1
-                            check = Views.checkWordMatch(search, w)
+                            check = Search.checkWordMatch(search, w)
                             if check:
                                 checkInJson = True
                                 checkInSentence = True
@@ -64,17 +64,17 @@ class Views:
                         # print(strs)
                         # print(strs)
                     if checkInJson:
-                        d['text'] = strs
-                        d['text'] = " ".join(str(x) for x in d['text'])
+                        d['tweet_text'] = strs
+                        d['tweet_text'] = " ".join(str(x) for x in d['tweet_text'])
                         jsonData.append(d)
                         checkInJson = False
             except Exception as e:
                 print(e)
-                jsonData = Views.getJsonData()
+                jsonData = Search.getJsonData()
 
             try:
                 for d in xmlFile:
-                    sentences = Views.split_into_sentences(d['description'])
+                    sentences = Search.split_into_sentences(d['description'])
                     # print(sentences)
                     for sentence in sentences:
                         originalText = [x.replace(' ', '') for x in sentence.split(' ')]
@@ -84,7 +84,7 @@ class Views:
                         sentenceIndex = 0
                         for ids, w in enumerate(text):
                             sentenceIndex += 1
-                            check = Views.checkWordMatch(search, w)
+                            check = Search.checkWordMatch(search, w)
                             if check:
                                 checkInXml = True
                                 checkInSentence = True
@@ -110,21 +110,21 @@ class Views:
                         checkInXml = False
             except Exception as e:
                 print(e)
-                xmlData = Views.getXmlData()
+                xmlData = Search.getXmlData()
         else:
-            jsonData = Views.getJsonData()
-            xmlData = Views.getXmlData()
-        return render_template('index.html', jsonData=jsonData, jsonLog=jsonLog, xmlData=xmlData, xmlLog=xmlLog, search=search)
+            jsonData = Search.getJsonData()
+            xmlData = Search.getXmlData()
+        return render_template('search.html', jsonData=jsonData, jsonLog=jsonLog, xmlData=xmlData, xmlLog=xmlLog, search=search)
 
     def getJsonData():
-        with open("./app/public/file/data.json", encoding="utf-8") as f:
+        with open("./app/public/file/testdata.json", encoding="utf-8") as f:
             data = json.load(f)
         return data
 
     def getXmlData():
-        df = pd.read_xml("./app/public/file/data.xml")
+        df = pd.read_xml("./app/public/file/testdata.xml")
         dfJson = df.to_json(orient="records")
-        print(dfJson)
+        # print(dfJson)
         data = json.loads(dfJson)
         # print(data)
         return data
